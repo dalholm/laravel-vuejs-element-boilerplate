@@ -11,5 +11,18 @@ const mix = require('laravel-mix');
  |
  */
 
+
+mix.webpackConfig({
+    devServer:{
+        disableHostCheck: true
+    },
+});
+
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .copyDirectory('resources/assets', 'public/assets');
+
+
+if (mix.inProduction()) {
+    mix.version();
+}
