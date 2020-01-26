@@ -1,6 +1,74 @@
 @import 'element-variables';
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+.top-navigation {
+    padding: 0;
+}
+
+.burger {
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+
+    .bar1, .bar2, .bar3 {
+        width: 100%;
+        height: 2px;
+        background-color: $--color-primary;
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+
+    }
+}
+
+.el-container {
+    &.app {
+
+    }
+    .el-header {
+    }
+    .el-aside {
+        .logo {
+            height: 60px;
+            background: $--color-primary;
+            text-align: center;
+            img {
+                padding-top: 15px;
+                height: 30px;
+            }
+        }
+        height: 100%;
+        width: 200px!important;
+        .el-menu {
+            width: 200px;
+            border: none;
+        }
+    }
 }
 
